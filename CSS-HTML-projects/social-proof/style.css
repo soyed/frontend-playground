@@ -23,6 +23,11 @@
 body {
   min-height: 100vh;
   font-size: 1.3rem;
+  background: url('./images/bg-pattern-top-desktop.svg'),
+    url('./images/bg-pattern-bottom-desktop.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-image: cover, cover;
+  background-position: top left, bottom right;
 }
 
 .container {
@@ -235,6 +240,13 @@ a:visited {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    background: url('./images/bg-pattern-top-mobile.svg'),
+      url('./images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-image: cover, cover;
+    background-position: top left, bottom right;
+  }
   .container {
     grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
   }
