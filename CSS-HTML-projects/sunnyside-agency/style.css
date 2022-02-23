@@ -72,15 +72,12 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, minmax(50rem, 1fr));
-
   place-content: center;
 }
 
 .services__card {
   display: flex;
   flex-direction: column;
-  /* justify-content: end; */
-
   height: 100%;
 }
 
@@ -92,7 +89,6 @@ body {
 
 .services__card--5,
 .services__card--6 {
-  place-self: end;
   padding: unset;
   justify-content: end;
   align-items: center;
@@ -107,6 +103,7 @@ body {
 .services__card--6 {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .services__card--2 {
   background-image: url('./images/desktop/image-transform.jpg');
@@ -118,10 +115,12 @@ body {
 
 .services__card--5 {
   background-image: url('./images/desktop/image-graphic-design.jpg');
+  color: var(--color-secondary);
 }
 
 .services__card--6 {
   background-image: url('./images/desktop/image-photography.jpg');
+  color: var(--color-secondary-dark);
 }
 
 .services__card--title {
@@ -146,6 +145,11 @@ body {
   font-weight: 700;
   color: black;
   font-size: calc(1rem + 0.3vw);
+}
+
+.services__card--1 .services__card--para,
+.services__card--4 .services__card--para {
+  color: var(--color-tertiary);
 }
 
 .services__card--5 .services__card--title,
@@ -334,6 +338,49 @@ body {
   .gallery,
   .footer {
     grid-column: col-start 1 / col-end 4;
+  }
+
+  .header {
+    background-image: url('./images/mobile/image-header.jpg');
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(30rem, 40rem)) repeat(
+        2,
+        minmax(55rem, 1fr)
+      );
+  }
+
+  .services__card {
+    text-align: center;
+  }
+
+  .services__card--2 {
+    background-image: url('./images/mobile/image-transform.jpg');
+    grid-row: 1 / 2;
+  }
+
+  .services__card--3 {
+    background-image: url('./images/mobile/image-stand-out.jpg');
+  }
+
+  .services__card--5 {
+    background-image: url('./images/mobile/image-graphic-design.jpg');
+  }
+
+  .services__card--6 {
+    background-image: url('./images/mobile/image-photography.jpg');
+  }
+
+  .services__card--1,
+  .services__card--4 {
+    padding: calc(5rem + 2vw);
+  }
+
+  .services__card--para {
+    font-size: calc(1rem + 0.5vw);
   }
 
   .testimonials {
