@@ -38,6 +38,7 @@ a:visited {
 }
 
 li {
+  list-style: none;
 }
 
 body {
@@ -241,6 +242,67 @@ body {
 
 .footer {
   background-color: var(--color-secondary-light);
+  padding: 5vh 5vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__heading {
+  margin-bottom: calc(1.5rem + 1.5vw);
+}
+
+.footer__heading--title {
+  font-family: 'Fraunces', serif;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: calc(1.5rem + 1vw);
+  color: var(--color-secondary);
+}
+
+.footer__links {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  margin-bottom: calc(2rem + 2vw);
+}
+
+.footer__links--para {
+  font-size: calc(1rem + 0.5vw);
+  font-weight: 300;
+  color: var(--color-secondary);
+  opacity: 0.7;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-bottom: calc(2rem + 1.5vw);
+}
+
+.footer__social--list {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer__social--list__item a img {
+  color: var(--color-secondary-dark);
+}
+
+.footer__attribution {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+.footer__attribution a {
+  color: var(--color-white);
 }
 
 /* Media queries */
@@ -311,5 +373,33 @@ body {
 
   .gallery img:nth-child(2) {
     display: block;
+  }
+
+  .footer {
+    padding: 5vh 3vw;
+  }
+
+  .footer__links {
+    width: 100%;
+  }
+
+  .footer__heading--title {
+    font-size: 2.5rem;
+  }
+
+  .footer__social {
+    width: 50%;
+  }
+
+  .footer__social--list {
+    width: 100%;
+  }
+
+  .footer__links--para {
+    font-size: 1.7rem;
+  }
+
+  .footer__attribution {
+    font-size: 1.3rem;
   }
 }
