@@ -22,40 +22,69 @@
 
     <!-- CSS File -->
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- Javascript File -->
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <main class="container">
       <!-- Hero  -->
 
-      <header class="header">
-        <!-- Header Title -->
-        <h2 class="header--title">Sunnyside</h2>
-        <!-- Header Nav  -->
-        <div class="header--nav">
-          <ul class="header--nav__list">
-            <li class="header--nav__list--item">About</li>
-            <li class="header--nav__list--item">Services</li>
-            <li class="header--nav__list--item">Projects</li>
-            <button
-              class="header--nav__contact--btn"
-              aria-label="Contact Us Button"
+      <section class="hero">
+        <header class="hero__header">
+          <!-- Header Hamburger -->
+          <div class="hero__header--hamburger hidden">
+            <img
+              src="./images/icon-hamburger.svg"
+              alt="Sunnyside menu icon displaying all navigation items"
+              title="Sunnyside Menu Icon"
+              class="hero__header--hamburger__icon"
+            />
+          </div>
+          <!-- Header Nav  -->
+          <nav class="hero__header--nav">
+            <!-- Nav Title -->
+            <a
+              href="#"
+              aria-label="Sunnyside Home page Link"
+              class="hero__header--nav__logo"
             >
-              Contact
-            </button>
-          </ul>
-        </div>
-        <!-- Header Checkbook -->
-        <input type="checkbox" name="header--nav" id="header--nav" />
-        <!-- Header Hamburger -->
+              <img
+                src="./images/logo.svg"
+                alt="Sunnyside Logo in a bold, and white text."
+                title="Sunnyside Logo"
+              />
+            </a>
+            <!-- Nav Items -->
+            <ul class="hero__header--nav__list">
+              <li class="hero__header--nav__list--item">
+                <a href="#" aria-label="About Page Link">About</a>
+              </li>
+              <li class="hero__header--nav__list--item">
+                <a href="#" aria-label="Services Page Link">Services</a>
+              </li>
+              <li class="hero__header--nav__list--item">
+                <a href="#" aria-label="Projects Page Link">Projects</a>
+              </li>
+              <div class="hero__header--nav__list--item">
+                <button
+                  class="hero__header--nav__contact--btn"
+                  aria-label="Contact Us Button"
+                >
+                  Contact
+                </button>
+              </div>
+            </ul>
+          </nav>
+        </header>
 
-        <!-- Header Section -->
+        <!-- Hero Section -->
         <section class="hero__main">
           <h1 class="hero__main--title">We are Creatives</h1>
-
           <!-- the white mark -->
           <div></div>
         </section>
-      </header>
+      </section>
 
       <!-- Services -->
       <section class="services">
@@ -265,7 +294,18 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="footer__heading">
-          <h2 class="footer__heading--title">Sunnyside</h2>
+          <!-- <h2 class="footer__heading--title">Sunnyside</h2> -->
+          <a
+            href="#"
+            aria-label="Sunnyside Home page Link"
+            class="footer__heading--title"
+          >
+            <img
+              src="./images/logo.svg"
+              alt="Sunnyside Logo in a bold, and white text."
+              title="Sunnyside Logo"
+            />
+          </a>
         </div>
         <div class="footer__links">
           <p class="footer__links--para">About</p>
