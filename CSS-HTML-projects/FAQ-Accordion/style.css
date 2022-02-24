@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* Custom Properties */
+  --color-background-violet: hsl(273, 75%, 66%);
+  --color-background-violet: hsl(240, 73%, 65%);
+  --color-text: hsl(240, 6%, 50%);
+  --color-text-dark: hsl(237, 12%, 33%);
+  --color-divider: hsl(240, 5%, 91%);
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.3rem;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr min-content;
+}
+
+/*========== Media Query =>  Tablet     =============*/
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/*========== Media Query =>  Mobile     =============*/
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
