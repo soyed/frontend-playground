@@ -64,14 +64,29 @@ a:visited {
   width: 100%;
 }
 
-.faq__image {
+.faq__collage {
   width: 45%;
+  overflow: hidden;
 }
 
-.faq__image img {
-  width: 10rem;
-  height: 10rem;
+.faq__collage img {
   object-fit: contain;
+  width: 120%;
+  height: 120%;
+  overflow: hidden;
+  /* object-position: center; */
+}
+
+.faq__collage img:first-child {
+  /* transform: translateX(-25rem) translateY(110%); */
+}
+
+.faq__collage img:nth-child(2) {
+  transform: translateX(-20%);
+}
+
+.faq__collage img:nth-child(3) {
+  transform: translate(-30%, -100%);
 }
 
 .faq__content {
