@@ -11,7 +11,7 @@
 
   /* Custom Properties */
   --color-background-violet: hsl(273, 75%, 66%);
-  --color-background-violet: hsl(240, 73%, 65%);
+  --color-background-blue: hsl(240, 73%, 65%);
   --color-text: hsl(240, 6%, 50%);
   --color-text-dark: hsl(237, 12%, 33%);
   --color-divider: hsl(240, 5%, 91%);
@@ -19,26 +19,228 @@
 
 body {
   font-family: 'Kumbh Sans', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: cornflowerblue;
 }
 
 .container {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
   grid-template-rows: 1fr min-content;
+
+  /* TODO: Fix the linear gradient */
+  background: linear-gradient(
+    var(--color-background-violet),
+    var(--color-background-blue)
+  );
+}
+
+.faq-container {
+  grid-column: col-start 1 / col-end 12;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq {
+  margin: 0rem calc(2rem + 2vw);
+  height: 55rem;
+  max-width: 100rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0.5rem 0.7rem 5rem 0.3rem var(--color-background-blue);
+
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  width: 100%;
+}
+
+.faq__image {
+  width: 45%;
+}
+
+.faq__image img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.faq__content {
+  width: 55%;
+  padding: calc(1rem + 1vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faq__content--title {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.faq__content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faq__content--card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.faq__content--card__question,
+.faq__content--card__answer {
+  width: 80%;
+}
+
+.faq__content--card__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.faq__content--card__question p {
+  font-size: calc(1rem + 0.3vw);
+  color: var(--color-text);
+}
+
+.faq--active {
+  transition: all 0.35s;
+}
+.faq__content--card__question img {
+  object-fit: contain;
+  width: 1.5rem;
+}
+
+.faq__content--card__answer {
+  color: var(--color-text);
+  display: none;
+}
+
+.faq__content--card span {
+  margin-top: 1rem;
+
+  width: 80%;
+
+  border-bottom: 0.1rem var(--color-divider) solid;
+}
+
+.faq--active .faq__content--card__question p {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.faq--active .faq__content--card__answer {
+  display: block;
+}
+
+.faq--active .faq__content--card__question img {
+  transform: rotateX(0.5turn);
+}
+
+.footer {
+  grid-column: col-start 1 / col-end 12;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(1rem + 0.3vw);
+  background-color: #fff;
+}
+
+.footer__attribution {
+  text-align: center;
+  font-size: calc(0.85rem + 0.5rem);
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  color: #000000;
 }
 
 /*========== Media Query =>  Tablet     =============*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .container {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+  }
+
+  .faq {
+    grid-column: col-start 1 / col-end 8;
+
+    margin: 0rem calc(1.5rem + 2vw);
+    height: 50rem;
+  }
+
+  .faq__content--card__question,
+  .faq__content--card__answer,
+  .faq__content--card span {
+    width: 95%;
+  }
+
+  .footer {
+    grid-column: col-start 1 / col-end 12;
   }
 }
 
 /*========== Media Query =>  Mobile     =============*/
 @media screen and (max-width: 600px) {
   .container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+  }
+
+  .faq {
+    grid-column: col-start 1 / col-end 4;
+    flex-direction: column;
+    align-items: center;
+    margin: unset;
+    width: 90vw;
+    height: 60vh;
+  }
+
+  .faq__image,
+  .faq__content {
+    width: 100%;
+  }
+
+  .faq__content--title {
+    font-weight: 700;
+    margin-bottom: 5rem;
+  }
+
+  .faq__image {
+    height: 20%;
+  }
+
+  .faq__content {
+    height: 80%;
+    align-items: center;
+  }
+
+  .faq__content--card {
+    align-items: center;
+  }
+
+  .faq__content--card__question,
+  .faq__content--card__answer,
+  .faq__content--card span {
+    width: 95%;
+  }
+
+  .faq__content--card__question p {
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    grid-column: col-start 1 / col-end 4;
   }
 }
