@@ -27,6 +27,10 @@ li {
   list-style: none;
 }
 
+.hidden {
+  /* display: none; */
+}
+
 a:link,
 a:visited {
   text-decoration: none;
@@ -44,8 +48,66 @@ a:visited {
 .footer {
   grid-column: col-start 1 / col-end 12;
 }
+
 .hero {
   background-image: url('./images/desktop/image-hero.jpg');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 10rem;
+  width: 80%;
+}
+
+.hero__header--title {
+  width: 100%;
+  justify-self: flex-start;
+}
+
+.hero__header--nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero__header--nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.hero__header--nav ul li {
+  font-family: 'Alata', sans-serif;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+}
+
+.hero__main {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero__main--content {
+  max-width: 40%;
+  padding: 2rem calc(1rem + 1vw);
+  border: 0.3rem solid var(--color-white);
+}
+
+.hero__main--title {
+  font-size: calc(3rem + 1.5vw);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  width: 100%;
+  font-weight: 300;
 }
 
 .company,
@@ -286,6 +348,12 @@ a:visited {
   color: plum;
 }
 
+@media screen and (max-width: 1200px) {
+  .hero__main--content {
+    max-width: 50%;
+  }
+}
+
 /*==========  Media query => Tablet ==========*/
 @media screen and (max-width: 900px) {
   .container {
@@ -297,6 +365,19 @@ a:visited {
   .company,
   .gallery {
     grid-column: col-start 1 / col-end 8;
+  }
+
+  .hero__header,
+  .hero__main {
+    width: 90%;
+  }
+
+  .hero__header--nav ul li {
+    margin-right: calc(1rem + 0.5vw);
+  }
+
+  .hero__main--content {
+    max-width: 60%;
   }
 }
 
@@ -390,5 +471,40 @@ a:visited {
 
   .gallery__card--8 {
     background-image: url('./images/mobile/image-fisheye.jpg');
+  }
+
+  .hero {
+    background-image: url('./images/mobile/image-hero.jpg');
+  }
+
+  .hero__main--content {
+    max-width: 70%;
+  }
+
+  .hero__header--hamburger {
+    position: absolute;
+    right: 0;
+    margin-right: calc(5%);
+  }
+
+  .hero__header--nav {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-black);
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+  }
+
+  .hero__header--nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .open .hero__header--hamburger {
+    display: unset;
   }
 }
