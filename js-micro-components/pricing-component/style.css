@@ -90,7 +90,7 @@ a:visited {
 .pricing-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(25rem, 30rem));
-  grid-template-rows: repeat(auto-fill, minmax(30rem, 35rem));
+  grid-template-rows: repeat(auto-fill, minmax(35rem, 40rem));
 }
 
 .pricing__card {
@@ -112,11 +112,22 @@ a:visited {
 .pricing__card--header {
   display: flex;
   flex-direction: column;
-  height: 30%;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 35%;
+}
+
+.pricing__card--header h2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: calc(2rem + 1.2vw);
+  /* padding: 2rem; */
+  align-self: center;
 }
 
 .pricing__card--details {
-  height: 60%;
+  height: 55%;
   width: 90%;
   /* margin-bottom: 2rem; */
 
