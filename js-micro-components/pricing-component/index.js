@@ -3,10 +3,10 @@ const toggleBtn = document.querySelector('.header__content--btn');
 const priceCards = document.querySelectorAll('.pricing__card--header__active');
 
 /**
- *
+ * adjustPrice is an helper that toggles the cost each card monthly or annually.
  *
  * @param {*} price
- * @param {*} index => the index is the number of 9 to add or remove from the price
+ * @param {*} index => the index is the number of 9 to add or remove from a price
  * @param {*} monthly : boolean
  * @returns String
  */

@@ -129,7 +129,6 @@ a:visited {
 .pricing__card--details {
   height: 55%;
   width: 90%;
-  /* margin-bottom: 2rem; */
 
   display: flex;
   flex-direction: column;
@@ -174,14 +173,16 @@ a:visited {
   outline: none;
   border-radius: 0.5rem;
   color: #ffffff;
-  background: linear-gradient(--linear-gradient-style);
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .pricing__card--more button:hover,
 .pricing__card--more button:active {
-  background-color: transparent;
+  /* background-color: transparent; */
   color: var(--color-primary-dark);
+  background: none;
 }
 
 .pricing__card--more button:hover,
@@ -190,9 +191,14 @@ a:visited {
   border: 0.1rem solid var(--color-primary-dark);
 }
 
-.pricing__card--more:nth-child(2) button:hover,
-.pricing__card--more:nth-child(2) button:active {
-  background-color: transparent;
+.pricing__card:nth-child(2) .pricing__card--more button {
+  color: var(--color-primary-dark);
+  background: #ffffff;
+}
+
+.pricing__card:nth-child(2) .pricing__card--more button:hover,
+.pricing__card:nth-child(2) .pricing__card--more button:active {
+  background: none;
   color: #ffffff;
   border: 0.1rem solid #ffffff;
 }
