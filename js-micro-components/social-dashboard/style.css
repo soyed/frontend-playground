@@ -10,7 +10,12 @@
   font-size: 62.5%;
 
   /* Custom Properties */
+  --color
 }
 
 body {
+  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
 }
+
+
