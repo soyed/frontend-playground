@@ -10,7 +10,28 @@
   font-size: 62.5%;
 
   /* Custom Properties */
-  --color
+  --color-twitter: hsl(203, 89%, 53%);
+  --color-facebook: hsl(208, 92%, 53%);
+  --color-instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+  --color-youtube: hsl(348, 97%, 39%);
+
+  /* Light mode button  */
+  --color-toggle-dark: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --color-toggle-light: hsl(230, 22%, 74%);
+
+  /* Dark Theme */
+  --color-dark-bg: hsl(230, 17%, 14%);
+  --color-dark-bg-pattern: hsl(232, 19%, 15%);
+  --color-dark-card: hsl(228, 28%, 20%);
+  --color-dark-text: hsl(228, 34%, 66%);
+  --color-dark-text-m: hsl(0, 0%, 100%);
+
+  /* Light Theme */
+  --color-light-bg: hsl(0, 0%, 100%);
+  --color-light-bg-pattern: hsl(225, 100%, 98%);
+  --color-light-card: hsl(227, 47%, 96%);
+  --color-light-text: hsl(228, 12%, 44%);
+  --color-light-text-m: hsl(230, 17%, 14%);
 }
 
 body {
@@ -18,4 +39,59 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+a:link,
+a:visited {
+  text-decoration: none;
+}
 
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(2, minmax(min-content, 1fr)) min-content;
+}
+
+.socials,
+.overview,
+.footer {
+  grid-column: col-start 1 / col-end 12;
+}
+
+.footer {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(185, 127, 226);
+}
+
+.footer__attribution {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/*=============  Media Query => Tablet ========*/
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+  }
+
+  .socials,
+  .overview,
+  .footer {
+    grid-column: col-start 1 / col-end 8;
+  }
+}
+
+/*=============  Media Query => mobile ========*/
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+  }
+
+  .socials,
+  .overview,
+  .footer {
+    grid-column: col-start 1 / col-end 4;
+  }
+}
