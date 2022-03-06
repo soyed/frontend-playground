@@ -68,8 +68,8 @@ a:visited {
   align-items: center;
 }
 
-.header__content p,
-.header__content div {
+.header__content--para,
+.header__content--btn {
   margin-right: 2rem;
   padding: 2rem;
   color: var(--color-primary-light);
@@ -78,6 +78,39 @@ a:visited {
 
 .header__heading {
   margin-bottom: 3rem;
+}
+
+.header__content--btn {
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  padding: 1.5rem 3rem;
+  border-radius: 2rem;
+  margin: 0 3rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.header__content--btn::after {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-light-m);
+}
+
+.header__content .header__content--btn:hover,
+.header__content .header__content--btn:active {
+  opacity: 0.7;
+}
+
+.toggle .header__content--btn {
+}
+
+.toggle .header__content--btn::after {
+  transform: translateX(0.5rem);
+  left: 0.5rem;
 }
 
 .pricing {

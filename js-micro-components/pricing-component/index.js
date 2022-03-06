@@ -37,6 +37,8 @@ if (toggleBtn) {
       } else {
         card.textContent = `$${adjustPrice(currentPrice, 1, true)}`;
       }
+
+      toggleBtn.classList.toggle('toggle');
     });
   });
 }
