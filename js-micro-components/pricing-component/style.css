@@ -81,36 +81,49 @@ a:visited {
 }
 
 .header__content--btn {
-  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-  padding: 1.5rem 3rem;
-  border-radius: 2rem;
   margin: 0 3rem;
   position: relative;
+}
+
+.header__toggle--btn {
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  position: relative;
+  display: inline-block;
+  border-radius: 2rem;
+  width: 6rem;
+  height: 3rem;
+}
+
+.header__toggle--btn input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   transition: all 0.5s;
 }
 
-.header__content--btn::after {
-  content: '';
+.slider::before {
   position: absolute;
-  top: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+  content: '';
   background-color: var(--color-primary-light-m);
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  bottom: 0.25rem;
+  right: 0.5rem;
+  transition: all 0.5s;
 }
 
-.header__content .header__content--btn:hover,
-.header__content .header__content--btn:active {
-  opacity: 0.7;
-}
-
-.toggle .header__content--btn {
-}
-
-.toggle .header__content--btn::after {
-  transform: translateX(0.5rem);
-  left: 0.5rem;
+.header__toggle--btn input[type='checkbox']:checked + .slider {
+  transform: translateX(-2.5rem);
 }
 
 .pricing {
@@ -157,6 +170,7 @@ a:visited {
   font-size: calc(2rem + 1.2vw);
   /* padding: 2rem; */
   align-self: center;
+  transition: all 0.5s ease-in-out;
 }
 
 .pricing__card--details {

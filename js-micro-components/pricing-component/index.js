@@ -1,5 +1,5 @@
 // => Elements
-const toggleBtn = document.querySelector('.header__content--btn');
+const toggleBtn = document.querySelector('.toggle--btn');
 const priceCards = document.querySelectorAll('.pricing__card--header__active');
 
 /**
