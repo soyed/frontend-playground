@@ -114,14 +114,19 @@ header {
     align-items: center;
     width: 100%;
     height: 100vh;
-    margin-top: 7rem;
+
     padding: initial;
     background-color: rgb(187, 103, 103);
     display: none;
+    margin-top: 7rem;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
   }
 
-  .open .header--nav {
-    top: 0;
+  .header--nav.open {
+    display: initial;
+
+    transform: translateY(0%);
   }
 
   .header--nav ul {
@@ -170,15 +175,19 @@ header {
     top: 1rem;
   }
 
-  .open .header--hamburger div {
+  .header--hamburger.open {
+    transition: all 1s ease-in-out;
+  }
+
+  .header--hamburger.open div {
     transform: rotate(45deg);
   }
 
-  .open .header--hamburger div::before {
+  .header--hamburger.open div::before {
     transform: rotate(90deg);
     top: 50%;
   }
-  .open .header--hamburger div::before {
-    top: 0;
+  .header--hamburger.open div::after {
+    display: none;
   }
 }
