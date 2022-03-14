@@ -99,26 +99,57 @@ header {
 }
 
 @media screen and (max-width: 600px) {
+  header {
+    justify-content: initial;
+    padding: initial;
+  }
+
+  .header--brand h1 {
+    padding-left: 2rem;
+  }
+
   .header--nav {
-    display: flex;
+    position: fixed;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 7rem;
+    padding: initial;
+    background-color: rgb(187, 103, 103);
+    display: none;
+  }
+
+  .open .header--nav {
+    top: 0;
+  }
+
+  .header--nav ul {
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+  }
+
+  .header--nav ul li {
+    margin-right: initial;
+    margin-bottom: 2rem;
   }
 
   .header--hamburger {
     display: initial;
     width: 3rem;
     height: 3rem;
-    /* background-color: white; */
     position: absolute;
     right: 2rem;
     top: 2rem;
+    cursor: pointer;
   }
 
   .header--hamburger div {
     position: relative;
     width: 100%;
     height: 0.2rem;
-    background-color: #000000;
+    background-color: #ffffff;
     top: 50%;
     transform: all 0.5s;
   }
@@ -126,7 +157,7 @@ header {
   .header--hamburger div::after {
     content: '';
     position: absolute;
-    background-color: #000000;
+    background-color: #ffffff;
     width: 100%;
     height: 0.2rem;
   }
@@ -147,8 +178,7 @@ header {
     transform: rotate(90deg);
     top: 50%;
   }
-
-  .open .header--hamburger div::after {
+  .open .header--hamburger div::before {
     top: 0;
   }
 }
