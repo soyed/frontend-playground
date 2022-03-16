@@ -125,7 +125,6 @@ header {
 
   .header--nav.open {
     display: initial;
-
     transform: translateY(0%);
   }
 
@@ -176,7 +175,7 @@ header {
   }
 
   .header--hamburger.open {
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   .header--hamburger.open div {
