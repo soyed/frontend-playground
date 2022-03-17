@@ -66,21 +66,25 @@ a:visited {
 
 .header-container {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   width: 80%;
+  height: 10rem;
+  line-height: 10rem;
 }
 
 .header__hamburger {
-  position: fixed;
-  cursor: pointer;
+  display: none;
+}
+.header__nav--logo {
+  display: flex;
+  align-items: center;
 }
 
 .header__nav {
   display: flex;
+  align-items: center;
   width: 100%;
-  justify-content: space-between;
-  height: 10rem;
-  line-height: 10rem;
+  justify-content: flex-end;
 }
 
 .header__nav--menu {
@@ -498,36 +502,48 @@ a:visited {
   }
 
   .header__nav {
-    justify-content: initial;
-    position: relative;
-    /* width: inherit; */
-  }
-
-  .header__nav--logo {
-    /* width: 100%; */
-    margin: 0 calc(2em + 1.5vw);
-  }
-
-  .header__hamburger {
-    right: calc(2rem + 1.5vw);
-    cursor: pointer;
-  }
-  .header__hamburger img {
-    cursor: pointer;
-  }
-
-  .header__nav--menu {
     position: fixed;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: 10rem;
     height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    background-color: var(--color-primary-dark);
+    width: 100%;
+    z-index: 20;
     display: none;
   }
 
-  .open .header__nav--menu {
+  .header__nav--menu {
+    height: inherit;
+    width: inherit;
+    flex-direction: column;
+    background-color: var(--color-primary-dark);
+    padding-top: 5vh;
+
+    background-image: url('./images/bg-pattern-mobile-nav.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .header__nav--logo {
+    margin-left: calc(2rem + 1.5vw);
+  }
+
+  .header__hamburger {
     display: initial;
+    position: absolute;
+    right: 0;
+    margin-right: calc(2rem + 1.5vw);
+    top: 1rem;
+    cursor: pointer;
+  }
+
+  .header__nav.open {
+    display: initial;
+    transition: all 1s;
+  }
+  .header__hamburger.open {
+    transition: all 1s;
   }
 
   .header__nav--menu li {
@@ -536,7 +552,6 @@ a:visited {
 
   .header__nav--menu li a,
   .header__nav--menu li:last-child a {
-    /* padding: 1rem; */
     font-size: 1.7rem;
     color: var(--color-secondary-light);
   }
