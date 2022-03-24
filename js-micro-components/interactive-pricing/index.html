@@ -14,16 +14,13 @@
 
     <title>Frontend Mentor | Interactive pricing component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <main class="container">
@@ -40,16 +37,23 @@
                 <p><span class="price">&dollar;16.00</span> / month</p>
               </div>
               <div>
-                <div class="price__fill"></div>
-                <img src="./images/icon-slider.svg" alt="" />
+                <div class="price__track">
+                  <div class="price__fill"></div>
+                  <div class="slider-container">
+                    <img src="./images/icon-slider.svg" alt="" />
+                  </div>
+                </div>
               </div>
               <div>
-                <p>Monthly Billing</p>
                 <div>
-                  <span>button</span>
+                  <p>Monthly Billing</p>
                 </div>
-                <p>Yearly Billing</p>
-                <p>25% discount</p>
+                <div class="toggle--btn">
+                  <span></span>
+                </div>
+                <div>
+                  <p>Yearly Billing <span>25% discount</span></p>
+                </div>
               </div>
             </div>
             <div class="main__content--bottom">
@@ -74,8 +78,8 @@
           </div>
         </div>
       </section>
-      <footer>
-        <p class="attribution">
+      <footer class="footer">
+        <p class="footer__attribution">
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
             >Frontend Mentor</a
@@ -85,6 +89,5 @@
         </p>
       </footer>
     </main>
-    Pageviews $ /month Monthly Billing Yearly Billing 25% discount
   </body>
 </html>
