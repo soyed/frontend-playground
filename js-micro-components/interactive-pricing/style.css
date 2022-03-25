@@ -40,8 +40,9 @@ a:visited {
 
   background: url('./images/bg-pattern.svg'), var(--color-main-bg);
   background-repeat: no-repeat;
-  background-size: 50vh cover;
-  /* background-position: center; */
+  background-size: 100vw, 50vh;
+
+  /* background-position: 100vw; */
 }
 
 .main-section {
