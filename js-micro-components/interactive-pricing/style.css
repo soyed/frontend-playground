@@ -144,38 +144,67 @@ a:visited {
   flex: 2 0 auto;
 }
 
-.main__content--top > div:nth-child(2) > div {
+.range--slider {
+  -webkit-appearance: none;
   width: 100%;
-  background-color: var(--color-empty-slider);
+  cursor: pointer;
+}
+/* Slider Track Style for mozilla and chrome */
+.range--slider::-webkit-slider-runnable-track {
+  background: var(--color-empty-slider);
   height: 0.8rem;
-  border-radius: 2rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  border-radius: 1rem;
 }
 
-.price__fill {
-  background-color: var(--color-slider-bar);
-  width: inherit;
-  width: 16%;
-  height: inherit;
-  border-radius: inherit;
+.range--slider::-moz-range-track {
+  background: var(--color-empty-slider);
+  height: 0.8rem;
+  border-radius: 1rem;
 }
-
-.slider-container {
-  width: 3.5rem;
+/* Slider Thumb Style for mozilla and chrome */
+.range--slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
   height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50%;
+  margin-top: -1.5rem;
+  background-image: url('./images/icon-slider.svg');
+  outline: none;
+  border: none;
   background-color: var(--color-slider-bg);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0rem 1rem 2.5rem 0.2rem var(--color-slider-bg);
+}
+.range--slider::-webkit-slider-thumb:hover {
+  background-color: hsla(174, 86%, 45%, 0.952);
+}
+.range--slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  background-color: hsl(172, 92%, 42%);
 }
 
-.slider-container img {
-  object-fit: contain;
-  object-position: center;
+.range--slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  margin-top: -0.4rem;
+  background-image: url('./images/icon-slider.svg');
+  outline: none;
+  border: none;
+  background-color: var(--color-slider-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0rem 1rem 2.5rem 0.2rem var(--color-slider-bg);
+}
+.range--slider::-moz-range-thumb:hover {
+  background-color: hsla(174, 86%, 45%, 0.952);
+}
+
+.range--slider::-moz-range-thumb:active {
+  cursor: grabbing;
+  background-color: hsl(172, 92%, 42%);
 }
 
 .main__content--top > div:last-child {
